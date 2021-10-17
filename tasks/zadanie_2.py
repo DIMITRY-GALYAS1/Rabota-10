@@ -1,28 +1,27 @@
-# !/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import sys
+import math
 
 
 def cylinder():
-    h = int(input('Введите высоту цилиндра: '))
-    rad = int(input('Введите радиус цилиндра: '))
-
     def circle():
-        print('Площадь полной поверхности цилиндра: ',
-              2 * 3.14 * h * rad + 2 * 3.14 * rad ** 2)
+        return math.pi * radius ** 2
 
-    z = input('Какую площадь найти: площадь боковой '
-              'поверхности или полную площадь цилиндра?\n'
-              'Для нахождения площади бокой поверхности введите - 1\n'
-              'Для нахождения площади полной поверхности цилинда введите - 2\n'
-              '>>>')
-    if z == '2':
-        circle()
-    elif z == '1':
-        print('Площадь боковой повехности: ', 2 * 3.14 * h * rad)
+    height = float(input("Введите высоту: "))
+    radius = float(input("Введите радиус: "))
+    z = input("1 - Площадь боковой поверхности, "
+              "2 - Полная площадь цилиндра: ")
+    side = 2 * math.pi * radius * height
+
+    if z == "1":
+        print("Площадь боковой поверхности:", side)
+    elif z == "2":
+        st_circle = circle()
+        full_pl = side + 2 * st_circle
+        print("Полная площадь:", full_pl)
     else:
-        print(f"Неизвестная команда {z}", file=sys.stderr)
+        print("Неизвестная команда")
 
 
 if __name__ == '__main__':

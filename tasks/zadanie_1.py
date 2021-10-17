@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-def test():
+def check():
     z = int(input('Введите число:'))
     if z > 0:
         positive(z)
@@ -19,4 +19,4 @@ def negative(z):
 
 
 if __name__ == '__main__':
-    test()
+    check()
